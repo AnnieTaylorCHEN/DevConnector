@@ -9,7 +9,7 @@ const Login = ({ login, isAuthenticated }) => {
         email: '',
         password: ''
     })
-    const { email, password} = formData
+    const { email, password } = formData
     const onChange = e => setFormData({...formData, [e.target.name]: e.target.value})
     const onSubmit = async e => {
         e.preventDefault()
@@ -60,7 +60,7 @@ const Login = ({ login, isAuthenticated }) => {
     )
 }
 
-login.propTypes = {
+Login.propTypes = {
     login: PropTypes.func.isRequired,
     isAuthenticated: PropTypes.bool
 }
