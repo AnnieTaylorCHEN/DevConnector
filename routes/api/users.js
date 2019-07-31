@@ -37,8 +37,8 @@ router.post('/',
         //get users' gravatar
             const avatar = gravatar.url(email, {
                 s: '200',
-                r: 'pm',
-                d: 'retro'
+                r: 'pg',
+                d: 'robohash'
             })
         //create new user with req info and avatar
             user = new User({

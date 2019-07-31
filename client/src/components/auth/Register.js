@@ -52,7 +52,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                         placeholder="Email Address" 
                         name="email" 
                         value={email}
-                        onChange={e => onChange(e)}
+                        onChange={onChange}
                         required 
                         />
                     <small className="form-text">This site uses Gravatar so if you want a profile image, use a Gravatar email</small>
@@ -64,7 +64,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                         name="password"
                         minLength="6"
                         value={password}
-                        onChange={e => onChange(e)}
+                        onChange={onChange}
                         required
                     />
                 </div>
@@ -75,7 +75,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                         name="password2"
                         minLength="6"
                         value={password2}
-                        onChange={e => onChange(e)}
+                        onChange={onChange}
                         required
                     />
                 </div>

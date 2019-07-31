@@ -32,7 +32,7 @@ const Login = ({ login, isAuthenticated }) => {
                         placeholder="Email Address" 
                         name="email" 
                         value={email}
-                        onChange={e => onChange(e)}
+                        onChange={onChange}
                         required 
                         />
                 </div>
@@ -43,7 +43,7 @@ const Login = ({ login, isAuthenticated }) => {
                         name="password"
                         minLength="6"
                         value={password}
-                        onChange={e => onChange(e)}
+                        onChange={onChange}
                         required
                     />
                 </div>

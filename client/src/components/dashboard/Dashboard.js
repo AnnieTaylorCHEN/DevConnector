@@ -11,16 +11,16 @@ import { getCurrentProfile, deleteAccount } from '../../actions/profile'
 const Dashboard = ({ 
     getCurrentProfile, 
     deleteAccount,
-    auth: { user }, 
+    auth: { user },
     profile: {profile, loading } 
 }) => {
     useEffect(()=> {
         getCurrentProfile()
-    }, [getCurrentProfile])
+    },[getCurrentProfile])
 
     return loading && profile === null ? (<Spinner />) : ( <Fragment>
         <h1 className="large text-primary">Dashboard</h1>
-        <p className="lead"><i className="fas fa-user"></i>Welcome, { user && user.name }</p>
+        <p className="lead"><i className="fas fa-user"></i>Welcome, {user && user.name}</p>
         {profile !== null ? (
             <Fragment>
                 <DashboardActions />
@@ -29,7 +29,7 @@ const Dashboard = ({
 
                 <div className="my-2">
                     <button className="btn btn-danger" onClick={()=> deleteAccount()}>
-                    <i className="fas fa-user-minus"></i>Delete my Account
+                    <i className="fas fa-user-minus"></i> Delete my Account
                     </button>
                 </div>
             </Fragment>
@@ -45,13 +45,13 @@ const Dashboard = ({
 Dashboard.propTypes = {
     getCurrentProfile: PropTypes.func.isRequired,
     deleteAccount: PropTypes.func.isRequired,
-    auth: PropTypes.object.isRequired,
-    profile: PropTypes.object.isRequired
+    profile: PropTypes.object.isRequired,
+    auth:PropTypes.object.isRequired
 }
 
 const mapStateToProps = state => ({
-    auth: state.auth,
-    profile: state.profile
+    profile: state.profile,
+    auth: state.auth
 })
 
 export default connect(mapStateToProps, { getCurrentProfile, deleteAccount })(Dashboard)

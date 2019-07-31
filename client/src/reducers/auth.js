@@ -42,10 +42,10 @@ export default function(state = initialState, action) {
         case ACCOUNT_DELETED:
             localStorage.removeItem('token')
             return {
-                ...state, 
                 token: null,
                 isAuthenticated: false,
-                loading: false
+                loading: false, 
+                user: null
             }
         default:
             return state
