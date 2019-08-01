@@ -18,7 +18,7 @@ router.get('/me', auth, async (req, res) => {
                 'user', 
                 ['name', 'avatar'])
         if (!profile) {
-            return res.status(400).json({})
+            return res.status(400).json()
         }
         res.json(profile)
     } catch (error) {

@@ -13,6 +13,7 @@ import {
 //get current user's profiles
 export const getCurrentProfile = () => async dispatch => {
     try {
+        //!!!!not fired after logged unless refreshed
         const res = await axios.get('/api/profile/me')
         dispatch({
             type: GET_PROFILE,
