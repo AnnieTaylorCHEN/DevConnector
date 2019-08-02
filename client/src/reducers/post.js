@@ -34,7 +34,7 @@ export default function(state=initialState, action) {
         case DELETE_POST:
             return {
                 ...state,
-                posts: state.posts.filter(post => post._id === payload),
+                posts: state.posts.filter(post => post._id !== payload),
                 loading: false
             }
         case ADD_POST:
@@ -64,7 +64,10 @@ export default function(state=initialState, action) {
         case REMOVE_COMMENT: 
             return {
                 ...state,
-                comments: state.post.comments.filter(comment=> comment._id !== payload),
+                post: {
+                    ...state.post,
+                    comments: state.post.comments.filter(comment => comment._id !== payload)
+                },
                 loading: false
             }
         default: 

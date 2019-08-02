@@ -16,6 +16,7 @@ import NotFound from '../layout/NotFound'
 import PrivateRoute from '../routing/PrivateRoute'
 
 const Routes = () => {
+
     return (
         <section className="container">
             <Alert />
